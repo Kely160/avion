@@ -1,0 +1,8 @@
+# === Fichiers et dossiers de compilation ===
+/temp/
+*.class
+
+/*.iml
+/.vscode/
+/*.log
+

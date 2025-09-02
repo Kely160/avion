@@ -1,14 +1,14 @@
 @echo off
 
 REM Déclaration des variables
-    set nom_projet=avion-framework
-    set temp=C:\Users\kevin\OneDrive\Bureau\Etudes\avion-framework-java\temp
-    set web=C:\Users\kevin\OneDrive\Bureau\Etudes\avion-framework-java\web
-    set xml=C:\Users\kevin\OneDrive\Bureau\Etudes\avion-framework-java\xml
-    set lib=C:\Users\kevin\OneDrive\Bureau\Etudes\avion-framework-java\lib
-    set war=C:\Users\kevin\OneDrive\Bureau\Etudes\avion-framework-java\
-    set src=C:\Users\kevin\OneDrive\Bureau\Etudes\avion-framework-java\src
-    set conf=C:\Users\kevin\OneDrive\Bureau\Etudes\avion-framework-java\conf
+    set nom_projet=avion
+    set temp=D:\git\compte2\avion\temp
+    set web=D:\git\compte2\avion\web
+    set xml=D:\git\compte2\avion\xml
+    set lib=D:\git\compte2\avion\lib
+    set war=D:\git\compte2\avion\
+    set src=D:\git\compte2\avion\src
+    set conf=D:\git\compte2\avion\conf
 REM Suppression de temp si il existe
     rmdir /s /q %temp%
 

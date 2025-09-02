@@ -6,3 +6,6 @@
 /.vscode/
 /*.log
 
+assets
+script.bat
+DBConnect.java

@@ -16,7 +16,7 @@
                                 <th scope="col">Contact</th>
                             </tr>
                         </thead>
-                        <tbody class="bg-white divide-y divide-gray-200">
+                        <tbody>
                             <% 
                                 List<Compagnie> compagnies = (List<Compagnie>) request.getAttribute("compagnies");
                                 if (compagnies != null) {
@@ -38,6 +38,10 @@
                             <% } %>
                         </tbody>
                     </table>
+
+                    <div class="mt-4 text-end">
+                        <a href="ajouterCompagnie" class="btn btn-primary">Ajouter une nouvelle compagnie</a>
+                    </div>
                 </div>
             </div>
         </div>

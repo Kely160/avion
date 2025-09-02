@@ -11,6 +11,34 @@ import utils.DBConnect;
 
 public class CompagnieService {
 
+    public Compagnie getCompagnieById(int id) throws Exception {
+        Compagnie compagnie = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+
+        try (Connection connection = DBConnect.getConnection()) {
+            preparedStatement = connection.prepareStatement("SELECT * FROM Compagnie WHERE id = ?");
+            preparedStatement.setInt(1, id);
+            resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                compagnie = toCompagnie(resultSet);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new Exception("Erreur lors de la récupération de la compagnie : " + e.getMessage(), e);
+        } finally {
+            try {
+                if (resultSet != null) resultSet.close();
+                if (preparedStatement != null) preparedStatement.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        return compagnie;
+    }
+
     public List<Compagnie> getAllCompagnies() throws Exception {
         List<Compagnie> compagnies = new ArrayList<>();
         PreparedStatement preparedStatement = null;

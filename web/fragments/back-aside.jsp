@@ -10,41 +10,10 @@
     </li>
 
     <li class="nav-item">
-      <a class="nav-link collapsed" data-bs-target="#avionics-nav" data-bs-toggle="collapse" href="#">
-        <i class="bi bi-airplane"></i><span>Systèmes avioniques</span><i class="bi bi-chevron-down ms-auto"></i>
+      <a class="nav-link collapsed" href="compagnies">
+        <i class="bi bi-building"></i>
+        <span>Compagnie</span>
       </a>
-      <ul id="avionics-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
-        <li>
-          <a href="flight-alerts.jsp">
-            <i class="bi bi-circle"></i><span>Alertes de vol</span>
-          </a>
-        </li>
-        <li>
-          <a href="flight-crew.jsp">
-            <i class="bi bi-circle"></i><span>Équipage</span>
-          </a>
-        </li>
-        <li>
-          <a href="passengers.jsp">
-            <i class="bi bi-circle"></i><span>Passagers</span>
-          </a>
-        </li>
-        <li>
-          <a href="maintenance.jsp">
-            <i class="bi bi-circle"></i><span>Maintenance</span>
-          </a>
-        </li>
-        <li>
-          <a href="navigation.jsp">
-            <i class="bi bi-circle"></i><span>Navigation</span>
-          </a>
-        </li>
-        <li>
-          <a href="weather.jsp">
-            <i class="bi bi-circle"></i><span>Météo</span>
-          </a>
-        </li>
-      </ul>
     </li>
 
     <li class="nav-heading">Gestion</li>

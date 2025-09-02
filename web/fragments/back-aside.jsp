@@ -16,6 +16,13 @@
       </a>
     </li>
 
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="avions">
+        <i class="bi bi-airplane"></i>
+        <span>Avion</span>
+      </a>
+    </li>
+
     <li class="nav-heading">Gestion</li>
 
     <li class="nav-item">

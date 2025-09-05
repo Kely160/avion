@@ -23,6 +23,13 @@
       </a>
     </li>
 
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="ajouterVol">
+        <i class="bi bi-geo-alt"></i>
+        <span>Vol</span>
+      </a>
+    </li>
+
     <li class="nav-heading">Gestion</li>
 
     <li class="nav-item">

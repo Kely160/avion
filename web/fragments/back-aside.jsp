@@ -30,6 +30,13 @@
       </a>
     </li>
 
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="ajouterPromotion">
+        <i class="bi bi-percent"></i>
+        <span>Promotion</span>
+      </a>
+    </li>
+
     <li class="nav-heading">Gestion</li>
 
     <li class="nav-item">

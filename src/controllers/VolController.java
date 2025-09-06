@@ -24,7 +24,7 @@ public class VolController {
         mv.setAttribute("content", "vol/form-vol.jsp");
 
         try {
-            mv.setAttribute("avions", new services.AvionService().getAllAvions());
+            mv.setAttribute("avions", new AvionService().getAllAvions());
         } catch (Exception e) {
             e.printStackTrace();
         }

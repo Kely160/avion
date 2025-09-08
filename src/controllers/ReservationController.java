@@ -2,6 +2,7 @@ package controllers;
 
 import annotation.Controller;
 import annotation.Get;
+import annotation.Param;
 import annotation.ParamObject;
 import annotation.Post;
 import annotation.Url;
@@ -59,6 +60,44 @@ public class ReservationController {
             if (userId == null) {
                 throw new Exception("Vous devez être connecté pour voir vos réservations");
             }
+            mv.setAttribute("reservations", new ReservationService().listReservationsByUser((Long) userId));
+        } catch (Exception e) {
+            mv.setAttribute("erreur", e.getMessage());
+        }
+        return mv;
+    }
+    
+    @Post
+    @Url(url = "payerReservation")
+    public ModelAndView payerReservation(@Param(name = "idReservation") Long idReservation, CustomSession session) {
+        ModelAndView mv = new ModelAndView("template-front.jsp");
+        mv.setAttribute("content", "vol/mes-reservations.jsp");
+        try {
+            Object userId = session.get("id");
+            if (userId == null) {
+                throw new Exception("Vous devez être connecté pour payer une réservation");
+            }
+            new ReservationService().payerReservation(idReservation);
+            mv.setAttribute("success", "Réservation payée avec succès");
+            mv.setAttribute("reservations", new ReservationService().listReservationsByUser((Long) userId));
+        } catch (Exception e) {
+            mv.setAttribute("erreur", e.getMessage());
+        }
+        return mv;
+    }
+
+    @Post
+    @Url(url = "annulerReservation")
+    public ModelAndView annulerReservation(@Param(name = "idReservation") Long idReservation, CustomSession session) {
+        ModelAndView mv = new ModelAndView("template-front.jsp");
+        mv.setAttribute("content", "vol/mes-reservations.jsp");
+        try {
+            Object userId = session.get("id");
+            if (userId == null) {
+                throw new Exception("Vous devez être connecté pour annuler une réservation");
+            }
+            new ReservationService().annulerReservation(idReservation);
+            mv.setAttribute("success", "Réservation annulée avec succès");
             mv.setAttribute("reservations", new ReservationService().listReservationsByUser((Long) userId));
         } catch (Exception e) {
             mv.setAttribute("erreur", e.getMessage());

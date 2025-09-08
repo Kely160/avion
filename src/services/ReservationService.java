@@ -12,6 +12,29 @@ import utils.DBConnect;
 
 public class ReservationService {
 
+    public void annulerReservation(Long idReservation) throws Exception {
+        updateStatus(idReservation, new StatusService().getStatusByNom("Annulé").getId()); 
+    }
+    
+    public void payerReservation(Long idReservation) throws Exception {
+        updateStatus(idReservation, new StatusService().getStatusByNom("Payé").getId()); 
+    }
+
+    public void updateStatus(Long idReservation, Long idStatus) throws Exception {
+        PreparedStatement ps = null;
+        try (Connection connection = DBConnect.getConnection()) {
+            ps = connection.prepareStatement("UPDATE Reservation SET idStatus = ? WHERE id = ?");
+            ps.setLong(1, idStatus);
+            ps.setLong(2, idReservation);
+            int rowsUpdated = ps.executeUpdate();
+            if (rowsUpdated == 0) {
+                throw new Exception("Aucune réservation trouvée avec l'ID spécifié");
+            }
+        } finally {
+            if (ps != null) ps.close();
+        }
+    }
+
     public int getCapacityForVolAndClasse(Long idVol, Long idClasse) throws Exception {
         PreparedStatement ps = null;
         ResultSet rs = null;

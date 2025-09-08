@@ -41,7 +41,6 @@
                     <td><%= r.getStatus().getNom() %></td>
                     <td>
                       <div class="d-flex gap-2">
-                        <!-- Bouton Payer -->
                         <form action="payerReservation" method="post" class="d-inline">
                           <input type="hidden" name="idReservation" value="<%= r.getId() %>">
                           <button type="submit" class="btn btn-success btn-sm">
@@ -49,7 +48,6 @@
                           </button>
                         </form>
 
-                        <!-- Bouton Annuler -->
                         <form action="annulerReservation" method="post" class="d-inline">
                           <input type="hidden" name="idReservation" value="<%= r.getId() %>">
                           <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Confirmer l’annulation ?');">
